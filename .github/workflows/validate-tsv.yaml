@@ -36,7 +36,7 @@ jobs:
 
       # Remove all the .csv files from the repository
       - name: Remove all .csv files # Step description in GitHub Actions UI
-        run: find . -type f -name "*.csv" -exec rm {} +  # Find and remove all .csv files in the repository
+        run: find . -type f -name "*.csv" -exec rm {} + # Find and remove all .csv files in the repository
 
       # Run csvclean with verbose output to check for errors in .tsv files
       - name: Run csvclean to print errors # Step description in GitHub Actions UI
@@ -64,7 +64,11 @@ jobs:
           git config user.email github-actions@github.com  # Use GitHub Actions default email
           # If changes are detected, stage and commit the updated files
           git add .
-          # Commit the changes with a message that includes the current date
-          git commit -m "Updated files on $(date)"  # Commit changes with a timestamped message
-          # Push the committed changes to GitHub
-          git push  # Push changes to the remote repository
+          if ! git diff --cached --quiet; then
+            # Commit the changes with a message that includes the current date
+            git commit -m "Updated files on $(date)"  # Commit changes with a timestamped message
+            # Push the committed changes to GitHub
+            git push  # Push changes to the remote repository
+          else
+            echo "No changes to commit."  # Print message if no changes were detected
+          fi  # End of conditional check for changes
