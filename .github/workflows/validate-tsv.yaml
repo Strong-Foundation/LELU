@@ -37,6 +37,10 @@ jobs:
       # Remove all the .csv files from the repository
       - name: Remove all .csv files # Step description in GitHub Actions UI
         run: find . -type f -name "*.csv" -exec rm {} + # Find and remove all .csv files in the repository
+      
+      # Remove all the .md files from the repository
+      - name: Remove all .md files # Step description in GitHub Actions UI
+        run: find . -type f -name "*.md" -exec rm {} + # Find and remove all .md files in the repository
 
       # Remove all the ' from the files.
       - name: Remove all the ' from the file content.
