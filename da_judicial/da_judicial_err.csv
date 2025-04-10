@@ -20,12 +20,12 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 14724,"Expected 10 columns, found 1 columns",ALMELIA ALLEN-
 14754,"Expected 10 columns, found 1 columns",ODILE ALMONTE
 14763,"Expected 10 columns, found 5 columns",BORO BX NYPD,BRONX,NA,NA,"Municipal Library Document 707 and Municipal Library Document Two 2059, not in CACS"
-14804,"Expected 10 columns, found 6 columns",RAYMOND ALVAREZ,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,CENTRAL
+14804,"Expected 10 columns, found 6 columns",RAYMOND ALVAREZ,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,CENTRAL
 14814,"Expected 10 columns, found 1 columns",NESTOR AMARANTE
 14824,"Expected 10 columns, found 5 columns",SEC NYPD,BRONX,NA,NA,"Municipal Library Document Two 2256, not in CACS"
 14835,"Expected 10 columns, found 5 columns",BX/QNS NYPD,BRONX,NA,NA,"Municipal Library Document 1547, not in CACS"
 14870,"Expected 10 columns, found 5 columns",BOR BX NYPD,BRONX,NA,NA,"Municipal Library Document 722, not in CACS"
-14879,"Expected 10 columns, found 6 columns",LEROY ANDREWS,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,BX CT
+14879,"Expected 10 columns, found 6 columns",LEROY ANDREWS,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,BX CT
 14888,"Expected 10 columns, found 1 columns",CITYWID
 14890,"Expected 10 columns, found 5 columns",VANDALS NYPD,BRONX,NA,NA,"Municipal Library Document Two 801 and 1768, not in CACS"
 14917,"Expected 10 columns, found 5 columns",PERS SQD NYPD,BRONX,NA,NA,"Municipal Library Document 698, not in CACS"
@@ -96,7 +96,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 15800,"Expected 10 columns, found 5 columns",DET.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2584, not in CACs"
 15834,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document 1591 and 1548, not in CACS"
 15844,"Expected 10 columns, found 1 columns",JASON BROCHHAUSE
-15849,"Expected 10 columns, found 6 columns",A BRODIE,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,QNS. CT.
+15849,"Expected 10 columns, found 6 columns",A BRODIE,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,QNS. CT.
 15866,"Expected 10 columns, found 5 columns",BBN NYPD,BRONX,NA,NA,"Municipal Library Document Two 2103, not in CACS"
 15870,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document 769, not in CACS"
 15915,"Expected 10 columns, found 5 columns",Det.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2167, not in CACS"
@@ -211,8 +211,8 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 17241,"Expected 10 columns, found 1 columns",YVETTE CUMBERBATC
 17265,"Expected 10 columns, found 5 columns",UNIT NYPD,BRONX,NA,NA,"Municipal Library Document 406, not in CACS"
 17279,"Expected 10 columns, found 5 columns",BX/QNS NYPD,BRONX,NA,NA,"Municipal Library Document Two 2116, not in CACS"
-17293,"Expected 10 columns, found 1 columns",MICHAEL D'ALESSANDR
-17295,"Expected 10 columns, found 1 columns",SCOTT D'ALESSANDR
+17293,"Expected 10 columns, found 1 columns",MICHAEL DALESSANDR
+17295,"Expected 10 columns, found 1 columns",SCOTT DALESSANDR
 17300,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document Two 2513, not in CACs"
 17313,"Expected 10 columns, found 1 columns",MADELINE DAGRACA-
 17318,"Expected 10 columns, found 5 columns",SO NYPD,BRONX,NA,NA,"Municipal Library Document 778, not in CACS"
@@ -241,9 +241,9 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 17663,"Expected 10 columns, found 5 columns",Det.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2364, not in CACS"
 17673,"Expected 10 columns, found 5 columns",Boro.Man. NYPD,BRONX,NA,NA,"Municipal Library Document Two 1656, not in CACS"
 17687,"Expected 10 columns, found 5 columns",Det.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2359 and 2633, not in CACS"
-17693,"Expected 10 columns, found 6 columns",CARABELLO,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,BX CT
+17693,"Expected 10 columns, found 6 columns",CARABELLO,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,BX CT
 17703,"Expected 10 columns, found 5 columns",DET.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 1653, not in CACS"
-17708,"Expected 10 columns, found 6 columns",LEONARD DEVLIN,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,106
+17708,"Expected 10 columns, found 6 columns",LEONARD DEVLIN,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,106
 17718,"Expected 10 columns, found 5 columns",DIV NYPD,BRONX,NA,NA,"Municipal Library Document Two 1689, not in CACS"
 17721,"Expected 10 columns, found 1 columns",KAREN DIAZ
 17739,"Expected 10 columns, found 5 columns",IMP ZN NYPD,BRONX,NA,NA,"Municipal Library Document 690; Named defendant in Lynch vs NYC 12-cv-4439, not in CACS"
@@ -272,7 +272,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 18063,"Expected 10 columns, found 5 columns",SSU NYPD,BRONX,NA,NA,"Municipal Library Document Two 2358, not in CACS"
 18077,"Expected 10 columns, found 5 columns",SVS NYPD,BRONX,NA,NA,"Municipal Library Document 673, not in CACS"
 18079,"Expected 10 columns, found 3 columns",Practicioner,NA,Named defendant in Griffin vs NYC 14-cv-7329 (SDNY)
-18106,"Expected 10 columns, found 6 columns",EMIL DZURILLA,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,77 Det.
+18106,"Expected 10 columns, found 6 columns",EMIL DZURILLA,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,77 Det.
 18117,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document 183, not in CACS"
 18173,"Expected 10 columns, found 5 columns",DIV NYPD,BRONX,NA,NA,"Municipal Library Document Two 2114 and 2497, not in CACS"
 18210,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 1691, not in CACS"
@@ -310,7 +310,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 18623,"Expected 10 columns, found 5 columns",T.SECT. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2245, not in CACS"
 18632,"Expected 10 columns, found 5 columns",.F. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2346, not in CACS"
 18643,"Expected 10 columns, found 5 columns",pct/SSU NYPD,BRONX,NA,NA,"Municipal Library Document Two 49, not in CACS"
-18660,"Expected 10 columns, found 6 columns",ALEXANDER,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,75
+18660,"Expected 10 columns, found 6 columns",ALEXANDER,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,75
 18681,"Expected 10 columns, found 5 columns",SEC NYPD,BRONX,NA,NA,"Municipal Library Document Two 2416, not in CACS"
 18712,"Expected 10 columns, found 1 columns",GEORGE FOUNTOULAKI
 18721,"Expected 10 columns, found 1 columns",GRACE FRADELLA-
@@ -345,7 +345,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 19152,"Expected 10 columns, found 5 columns",T/F NYPD,BRONX,NA,NA,"Municipal Library Document Two 2609, not in CACs"
 19158,"Expected 10 columns, found 5 columns",DIV NYPD,BRONX,NA,NA,"Municipal Library Document 796, not in CACS"
 19168,"Expected 10 columns, found 5 columns",Traffic T/F NYPD,BRONX,NA,NA,"Municipal Library Document 107, not in CACS"
-19178,"Expected 10 columns, found 6 columns",GRAY,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,CRIME
+19178,"Expected 10 columns, found 6 columns",GRAY,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,CRIME
 19180,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 1893, not in CACS"
 19197,"Expected 10 columns, found 1 columns",ANZELMO GIOVANNIELL
 19241,"Expected 10 columns, found 5 columns",TRAF TF NYPD,BRONX,NA,NA,"Municipal Library Document Two 1563, not in CACS"
@@ -397,7 +397,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 19788,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 2108 and 2722, not in CACS"
 19792,"Expected 10 columns, found 5 columns",v NYPD,BRONX,NA,NA,"Municipal Library Document Two 1656, not in CACS"
 19818,"Expected 10 columns, found 1 columns",BORO
-19828,"Expected 10 columns, found 6 columns",MOREIRA,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,Man.Ct.Sec
+19828,"Expected 10 columns, found 6 columns",MOREIRA,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,Man.Ct.Sec
 19833,"Expected 10 columns, found 5 columns",CT. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2728, not in CACs"
 19853,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 1728, not in CACS"
 19856,"Expected 10 columns, found 1 columns",MDMAHMU
@@ -429,7 +429,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 20165,"Expected 10 columns, found 1 columns",NICHOLAS HOLLINGSWOR
 20167,"Expected 10 columns, found 1 columns",YOLANDA HOLLINGSWOR
 20188,"Expected 10 columns, found 5 columns",SEC NYPD,BRONX,NA,NA,"Municipal Library Document Two 1896, not in CACS"
-20197,"Expected 10 columns, found 6 columns",DICKERSON,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,107
+20197,"Expected 10 columns, found 6 columns",DICKERSON,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,107
 20201,"Expected 10 columns, found 5 columns",INI NYPD,BRONX,NA,NA,"Municipal Library Document Two 2471, not in CACS"
 20205,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document 917, not in CACS"
 20209,"Expected 10 columns, found 1 columns",BX SO
@@ -505,7 +505,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 21071,"Expected 10 columns, found 1 columns",BORO
 21082,"Expected 10 columns, found 5 columns",v NYPD,BRONX,NA,NA,"Municipal Library Document Two 1664, 2394, and 2546, not in CACS"
 21088,"Expected 10 columns, found 1 columns",Citywide
-21103,"Expected 10 columns, found 6 columns",N,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,Det. Bur
+21103,"Expected 10 columns, found 6 columns",N,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,Det. Bur
 21105,"Expected 10 columns, found 5 columns",Hom T/F NYPD,BRONX,NA,NA,"Municipal Library Document 918, not in CACS"
 21108,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document Two 2423, not in CACS"
 21117,"Expected 10 columns, found 5 columns",BKLYN NYPD,BRONX,NA,NA,"Municipal Library Document Two 1696, not in CACS"
@@ -541,7 +541,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 21474,"Expected 10 columns, found 5 columns",SO NYPD,BRONX,NA,NA,"Municipal Library Document 888, not in CACS"
 21480,"Expected 10 columns, found 1 columns",SQD BK
 21497,"Expected 10 columns, found 1 columns",JOSE LINARES-
-21505,"Expected 10 columns, found 6 columns",ROBERTS,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,SPEC
+21505,"Expected 10 columns, found 6 columns",ROBERTS,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,SPEC
 21530,"Expected 10 columns, found 5 columns",Div NYPD,BRONX,NA,NA,"Municipal Library Document Two 1603, not in CACS"
 21561,"Expected 10 columns, found 5 columns",BKLYN NYPD,BRONX,NA,NA,"Municipal Library Document 1553, not in CACS"
 21570,"Expected 10 columns, found 1 columns",SHARON LOFTIN-
@@ -624,7 +624,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 22628,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 2298, not in CACS"
 22636,"Expected 10 columns, found 1 columns",BORO
 22638,"Expected 10 columns, found 1 columns",SHREEGANES
-22648,"Expected 10 columns, found 6 columns",JIMENEZ,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,Bklyn Ct
+22648,"Expected 10 columns, found 6 columns",JIMENEZ,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,Bklyn Ct
 22655,"Expected 10 columns, found 5 columns",SECT. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2321, not in CACS"
 22666,"Expected 10 columns, found 1 columns",JOHN
 22671,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 2126, not in CACS"
@@ -764,7 +764,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 24091,"Expected 10 columns, found 5 columns",V. NYPD,BRONX,NA,NA,"Municipal Library Document Two 1755, not in CACS"
 24107,"Expected 10 columns, found 5 columns",BK. NO NYPD,BRONX,NA,NA,"Municipal Library Document Two 2657, not in CACs"
 24144,"Expected 10 columns, found 1 columns",MELANIE PAGAN
-24154,"Expected 10 columns, found 6 columns",MARILYN PAGAN,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,MAN CT
+24154,"Expected 10 columns, found 6 columns",MARILYN PAGAN,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,MAN CT
 24158,"Expected 10 columns, found 5 columns",DIV NYPD,BRONX,NA,NA,"Municipal Library Document Two 400 and 1905, not in CACS"
 24164,"Expected 10 columns, found 1 columns",N SOUTH
 24173,"Expected 10 columns, found 5 columns",SEC NYPD,BRONX,NA,NA,"Municipal Library Document 649, not in CACS"
@@ -796,7 +796,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 24546,"Expected 10 columns, found 5 columns",Bx/Qns NYPD,BRONX,NA,NA,"Municipal Library Document Two 1597, not in CACS"
 24553,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 1988, not in CACS"
 24556,"Expected 10 columns, found 5 columns",Bx/Qns NYPD,BRONX,NA,NA,"Municipal Library Document 1608, not in CACS"
-24619,"Expected 10 columns, found 6 columns",O,<a href='https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted' target='_blank'>Document</a>,4,NA,NA,QNS CT
+24619,"Expected 10 columns, found 6 columns",O,<a href=https://www.documentcloud.org/documents/24441170-bronx-notified-officers-list-edited_redacted-redacted_redacted target=_blank>Document</a>,4,NA,NA,QNS CT
 24632,"Expected 10 columns, found 5 columns",SEC NYPD,BRONX,NA,NA,"Municipal Library Document Two 2104, not in CACS"
 24637,"Expected 10 columns, found 5 columns",Sect. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2344, not in CACS"
 24652,"Expected 10 columns, found 5 columns",DIV NYPD,BRONX,NA,NA,"Municipal Library Document 862, not in CACS"
@@ -862,7 +862,7 @@ line_number,msg,Officer.Name,Document,Type,Shield..,Tax..,Precinct.Command,Borou
 25561,"Expected 10 columns, found 5 columns",Det.SQD. NYPD,BRONX,NA,NA,"Municipal Library Document Two 2354, not in CACS"
 25565,"Expected 10 columns, found 5 columns",Boro.Man. NYPD,BRONX,NA,NA,"Municipal Library Document Two 1682, not in CACS"
 25568,"Expected 10 columns, found 1 columns",Counter
-25582,"Expected 10 columns, found 1 columns",Manag't
+25582,"Expected 10 columns, found 1 columns",Managt
 25589,"Expected 10 columns, found 5 columns",SECT NYPD,BRONX,NA,NA,"Municipal Library Document Two 1691, not in CACS; Municipal Library Document Two 2022, not in CACS"
 25594,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document Two 2272, not in CACS"
 25615,"Expected 10 columns, found 5 columns",SQD NYPD,BRONX,NA,NA,"Municipal Library Document 473, not in CACS"
