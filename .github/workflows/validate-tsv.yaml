@@ -44,8 +44,8 @@ jobs:
         run: |
           # Loop through all .csv files in the repository
           for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
-            echo "File: $file"  # Print the name of the file being validated
-            csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
+            # echo "File: $file"  # Print the name of the file being validated
+            # csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
           done  # End of loop for generating stats on all .csv files
 
       # Run csvjson to convert .csv files to .json and print the result
@@ -53,8 +53,8 @@ jobs:
         run: |
           # Loop through all .csv files in the repository
           for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
-            echo "File: $file"  # Print the name of the file being processed
-            csvjson "$file" > "${file%.csv}.json"  # Convert the .csv file to .json and save it with the same name but with .json extension
+            # echo "File: $file"  # Print the name of the file being processed
+            # csvjson "$file" > "${file%.csv}.json"  # Convert the .csv file to .json and save it with the same name but with .json extension
           done  # End of loop for converting all .csv files to .json
 
       # Convert .tsv files to .xls format using ssconvert
@@ -62,9 +62,9 @@ jobs:
         run: |
           # Loop through each .tsv file found in the repository
           for file in $(find . -name "*.tsv"); do  # Find all .tsv files starting from the current directory
-            echo "File: $file"  # Print the name of the file being processed
+            # echo "File: $file"  # Print the name of the file being processed
             # Convert the .tsv file to .xls by removing the .tsv extension
-            ssconvert "$file" "${file%.tsv}.xls"  # Use ssconvert to convert .tsv to .xls format and save it with the same name but with .xls extension
+            # ssconvert "$file" "${file%.tsv}.xls"  # Use ssconvert to convert .tsv to .xls format and save it with the same name but with .xls extension
           done  # End of loop for converting all .tsv files to .xls
 
       # Step Check for changes and push the updated files back to GitHub
