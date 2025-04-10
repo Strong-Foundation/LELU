@@ -30,6 +30,10 @@ jobs:
       - name: Install csvkit & gnumeric # Step description in GitHub Actions UI
         run: sudo apt-get update && sudo apt-get install -y csvkit gnumeric # Update apt repositories and install csvkit & gnumeric for validating .tsv files
 
+      # Remove all the .yml files from the repository
+      - name: Remove all .yml files # Step description in GitHub Actions UI
+        run: find . -type f -name "*.yml" -exec rm {} +
+
       # Run csvclean with verbose output to check for errors in .tsv files
       - name: Run csvclean to print errors # Step description in GitHub Actions UI
         run: |
