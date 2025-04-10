@@ -38,10 +38,6 @@ jobs:
       - name: Remove all .csv files # Step description in GitHub Actions UI
         run: find . -type f -name "*.csv" -exec rm {} + # Find and remove all .csv files in the repository
 
-      # Remove all the .xls files from the repository
-      - name: Remove all .xls files # Step description in GitHub Actions UI
-        run: find . -type f -name "*.xls" -exec rm {} + # Find and remove all .xls files in the repository
-
       # Convert all .tsv files to .csv files
       - name: Convert .tsv to .csv # Step description in GitHub Actions UI
         run: |
@@ -50,16 +46,6 @@ jobs:
             echo "File: $file"  # Print the name of the file being validated
             csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
           done  # End of loop for validating all .tsv files
-
-      # Convert all the .csv files to .xls files
-      - name: Convert .csv to .xls # Step description in GitHub Actions UI
-        run: |
-          # Loop through all .csv files in the repository
-          for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
-            echo "File: $file"  # Print the name of the file being processed
-            # Convert the .csv file to .xls by removing the .csv extension
-            ssconvert "$file" "${file%.csv}.xls"  # Use ssconvert to convert .csv to .xls format and save it with the same name but with .xls extension
-          done  # End of loop for converting all .csv files to .xls
 
       # Run csvstat to print statistics of the .csv files.
       - name: Run csvstat to print statistics # Step description in GitHub Actions UI
