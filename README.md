@@ -14,8 +14,7 @@ Each dataset is updated with every LELU tool update, ensuring users have access 
 
 This repository contains folders that hold raw **TSV** and **YAML** files. Each folder corresponds to a specific tab within the LELU tool.
 
-- **TSV Files:** These contain tab-separated values with structured data, typically representing detailed records of law enforcement officers and agencies.
-- **YAML Files:** These provide metadata and structured details that support the raw data in the TSV files, making it easier to understand and use.
+- **CSV Files:** These contain comma separated values with structured data, typically representing detailed records of law enforcement officers and agencies.
 
 The files are organized by LELU's sections (such as officer details, agency records, etc.), and each contains its own set of data.
 
