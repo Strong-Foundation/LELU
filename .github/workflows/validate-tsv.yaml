@@ -34,6 +34,10 @@ jobs:
       - name: Remove all .yml files # Step description in GitHub Actions UI
         run: find . -type f -name "*.yml" -exec rm {} +
 
+      # Remove all the .csv files from the repository
+      - name: Remove all .csv files # Step description in GitHub Actions UI
+        run: find . -type f -name "*.csv" -exec rm {} +  # Find and remove all .csv files in the repository
+
       # Run csvclean with verbose output to check for errors in .tsv files
       - name: Run csvclean to print errors # Step description in GitHub Actions UI
         run: |
