@@ -53,7 +53,7 @@ jobs:
           # Loop through all .csv files in the repository
           for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
             echo "File: $file"  # Print the name of the file being validated
-            # csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
+            csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
           done  # End of loop for generating stats on all .csv files
 
       # Step Check for changes and push the updated files back to GitHub
