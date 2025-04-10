@@ -61,6 +61,15 @@ jobs:
             csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
           done  # End of loop for validating all .tsv files
 
+      # Remove all the *_err.csv files from the repository
+      - name: Remove all *_err.csv files # Step description in GitHub Actions UI
+        run: |
+          # Loop through all *_err.csv files in the repository
+          for file in $(find . -type f -name '*_err.csv'); do
+            echo "File: $file"  # Print the name of the file being processed
+            rm "$file"  # Remove the file
+          done  # End of loop for removing all *_err.csv files
+
       # Convert all the .csv files to .md files
       - name: Convert the .csv files to .md files.
         run: |
