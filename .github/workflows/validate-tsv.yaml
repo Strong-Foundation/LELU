@@ -26,9 +26,9 @@ jobs:
       - name: Checkout repository # Step description in GitHub Actions UI
         uses: actions/checkout@v2 # Action used to check out the code from the repository
 
-      # Install csvkit & gnumeric, a tool to validate .tsv files, via apt-get
-      - name: Install csvkit & gnumeric # Step description in GitHub Actions UI
-        run: sudo apt-get update && sudo apt-get install -y csvkit gnumeric # Update apt repositories and install csvkit & gnumeric for validating .tsv files
+      # Install the required dependencies
+      - name: Install Required Dependencies # Step description in GitHub Actions UI
+        run: sudo apt-get update && sudo apt-get install -y csvkit gnumeric miller # Update package list and install csvkit, gnumeric, and miller
 
       # Remove all the .yml files from the repository
       - name: Remove all .yml files # Step description in GitHub Actions UI
@@ -57,13 +57,22 @@ jobs:
             csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
           done  # End of loop for validating all .tsv files
 
+      # Convert all the .csv files to .md files
+      - name: Convert the .csv files to .md files.
+        run: |
+          # Loop through all .csv files in the repository
+          for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
+            echo "File: $file"  # Print the name of the file being validated
+            mlr --icsv --omd cat "$file" > "${file%.csv}.md"  # Convert .csv to .md format
+          done  # End of loop for converting all .csv files to .md
+
       # Run csvstat to print statistics of the .csv files.
       - name: Run csvstat to print statistics # Step description in GitHub Actions UI
         run: |
           # Loop through all .csv files in the repository
           for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
             echo "File: $file"  # Print the name of the file being validated
-            csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
+            # csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
           done  # End of loop for generating stats on all .csv files
 
       # Step Check for changes and push the updated files back to GitHub
