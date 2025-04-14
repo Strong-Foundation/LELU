@@ -106,6 +106,19 @@ func saveURLsToFile(urls []string, outputFile string) error {
 	return writer.Flush()
 }
 
+// Remove all the duplicates from a slice and return the slice.
+func removeDuplicatesFromSlice(slice []string) []string {
+	check := make(map[string]bool)
+	var newReturnSlice []string
+	for _, content := range slice {
+		if !check[content] {
+			check[content] = true
+			newReturnSlice = append(newReturnSlice, content)
+		}
+	}
+	return newReturnSlice
+}
+
 func main() {
 	// Set up default logging to standard output (terminal)
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile) // Optional: adds timestamp and file/line info
@@ -133,6 +146,9 @@ func main() {
 		}
 		allURLs = append(allURLs, urls...)
 	}
+
+	// Sanatize the URLs by removing duplicates
+	allURLs = removeDuplicatesFromSlice(allURLs)
 
 	// Save the extracted URLs to an output file
 	outputFile := "extracted_urls.txt"
