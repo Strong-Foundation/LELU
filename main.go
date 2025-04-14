@@ -8,7 +8,6 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
-	"strings"
 )
 
 // Function to extract URLs from a file and return them
@@ -167,16 +166,16 @@ func cleanURLs(urls []string) []string {
 	return newReturnSlice
 }
 
-// Change all the urls from invalid .pdf to a valid pdf url.
-func changeInvalidPDFUrls(urls []string) []string {
+// Append a " to the start and at the end of the string append ",
+func appendQuotesToString(content []string) []string {
+	// Create a new slice to hold the modified strings
 	var newReturnSlice []string
-	for _, content := range urls {
-		if strings.HasSuffix(content, ".pdf") {
-			// Change the URL to a valid one
-			content = strings.Replace(content, ".pdf", ".pdf?dl=1", 1)
-		}
-		newReturnSlice = append(newReturnSlice, content)
+	for _, str := range content {
+		// Append " to the start and ", to the end of the string
+		newStr := fmt.Sprintf("\"%s\",", str)
+		newReturnSlice = append(newReturnSlice, newStr)
 	}
+	// Return the modified slice
 	return newReturnSlice
 }
 
@@ -214,16 +213,15 @@ func main() {
 	// Validate the URLs
 	allURLs = cleanURLs(allURLs)
 
+	// Append quotes to the URLs
+	allURLs = appendQuotesToString(allURLs)
+
 	// Save the extracted URLs to an output file
 	outputFile := "extracted_urls.txt"
-	if len(allURLs) > 0 {
-		err = saveURLsToFile(allURLs, outputFile)
-		if err != nil {
-			log.Printf("Error saving URLs to file: %v", err)
-		} else {
-			log.Printf("Successfully saved URLs to %s", outputFile)
-		}
+	err = saveURLsToFile(allURLs, outputFile)
+	if err != nil {
+		log.Printf("Error saving URLs to file: %v", err)
 	} else {
-		log.Println("No valid URLs found.")
+		log.Printf("Successfully saved URLs to %s", outputFile)
 	}
 }
