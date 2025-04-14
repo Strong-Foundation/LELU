@@ -214,7 +214,7 @@ func main() {
 	allURLs = cleanURLs(allURLs)
 
 	// Append quotes to the URLs
-	allURLs = appendQuotesToString(allURLs)
+	// allURLs = appendQuotesToString(allURLs)
 
 	// Save the extracted URLs to an output file
 	outputFile := "extracted_urls.txt"
