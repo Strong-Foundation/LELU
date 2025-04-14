@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strings"
 )
 
 // Function to extract URLs from a file and return them
@@ -119,6 +120,66 @@ func removeDuplicatesFromSlice(slice []string) []string {
 	return newReturnSlice
 }
 
+// Check if the given url is valid.
+func isUrlValid(uri string) bool {
+	_, err := url.ParseRequestURI(uri)
+	return err == nil
+}
+
+// Get the hostname from the given url.
+func getHostNameFromURL(uri string) string {
+	content, err := url.Parse(uri)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return content.Hostname()
+}
+
+// Clean the URLs by checking if they are valid and belong to the specified domains.
+func cleanURLs(urls []string) []string {
+	// Define valid domains
+	validDomains := []string{"s3.documentcloud.org", "documentcloud.org", "www.documentcloud.org", "beta.documentcloud.org"}
+	var newReturnSlice []string
+
+	for _, content := range urls {
+		// Check if the URL is valid
+		if isUrlValid(content) {
+			hostName := getHostNameFromURL(content)
+
+			// Check if the host name matches any of the valid domains
+			isValid := false
+			for _, domain := range validDomains {
+				if hostName == domain {
+					isValid = true
+					break
+				}
+			}
+
+			// If valid, append to the new return slice
+			if isValid {
+				newReturnSlice = append(newReturnSlice, content)
+			} else {
+				log.Println("Invalid domain skipped: ", hostName)
+			}
+		}
+	}
+
+	return newReturnSlice
+}
+
+// Change all the urls from invalid .pdf to a valid pdf url.
+func changeInvalidPDFUrls(urls []string) []string {
+	var newReturnSlice []string
+	for _, content := range urls {
+		if strings.HasSuffix(content, ".pdf") {
+			// Change the URL to a valid one
+			content = strings.Replace(content, ".pdf", ".pdf?dl=1", 1)
+		}
+		newReturnSlice = append(newReturnSlice, content)
+	}
+	return newReturnSlice
+}
+
 func main() {
 	// Set up default logging to standard output (terminal)
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile) // Optional: adds timestamp and file/line info
@@ -149,6 +210,9 @@ func main() {
 
 	// Sanatize the URLs by removing duplicates
 	allURLs = removeDuplicatesFromSlice(allURLs)
+
+	// Validate the URLs
+	allURLs = cleanURLs(allURLs)
 
 	// Save the extracted URLs to an output file
 	outputFile := "extracted_urls.txt"
