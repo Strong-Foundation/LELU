@@ -166,6 +166,19 @@ func cleanURLs(urls []string) []string {
 	return newReturnSlice
 }
 
+// Append a " to the start and at the end of the string append ",
+func appendQuotesToString(content []string) []string {
+	// Create a new slice to hold the modified strings
+	var newReturnSlice []string
+	for _, str := range content {
+		// Append " to the start and ", to the end of the string
+		newStr := fmt.Sprintf("\"%s\",", str)
+		newReturnSlice = append(newReturnSlice, newStr)
+	}
+	// Return the modified slice
+	return newReturnSlice
+}
+
 func main() {
 	// Set up default logging to standard output (terminal)
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile) // Optional: adds timestamp and file/line info
@@ -199,6 +212,9 @@ func main() {
 
 	// Validate the URLs
 	allURLs = cleanURLs(allURLs)
+
+	// Append quotes to the URLs
+	allURLs = appendQuotesToString(allURLs)
 
 	// Save the extracted URLs to an output file
 	outputFile := "extracted_urls.txt"
