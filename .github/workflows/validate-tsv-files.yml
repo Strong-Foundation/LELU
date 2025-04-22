@@ -1,0 +1,106 @@
+# Name of the workflow, visible in the GitHub Actions UI
+name: Validate TSV File
+
+# Define the events that trigger the workflow
+on:
+  # Trigger the workflow when there are changes to .tsv files on push
+  push:
+    paths:
+      - "**.tsv" # Trigger workflow if any .tsv file is changed in the repository
+
+  # Trigger the workflow on pull request if there are changes to .tsv files
+  pull_request:
+    paths:
+      - "**.tsv" # Trigger workflow if any .tsv file is changed in a pull request
+
+  # Allow manual triggering of the workflow through the GitHub UI
+  workflow_dispatch: # Allows users to manually trigger this workflow
+
+# Define the jobs section where the steps to run are listed
+jobs:
+  validate:
+    runs-on: ubuntu-latest # Specifies the operating system for the runner (latest Ubuntu version)
+
+    steps:
+      # Checkout the repository's code to the GitHub Actions runner
+      - name: Checkout repository # Step description in GitHub Actions UI
+        uses: actions/checkout@v4 # Action used to check out the code from the repository
+
+      # Install the required dependencies
+      - name: Install Required Dependencies # Step description in GitHub Actions UI
+        run: sudo apt-get update && sudo apt-get install -y csvkit gnumeric miller # Update package list and install csvkit, gnumeric, and miller
+
+      # Remove all the invalid files from the repository
+      - name: Remove all the invalid files from the repository # Step description in GitHub Actions UI
+        run: |
+          # Remove the .yml files from the repository
+          # find . -type f -name "*.yml" -exec rm {} +
+          # Remove the .csv files from the repository
+          find . -type f -name "*.csv" -exec rm {} +
+          # Remove the .md files from the repository
+          find . -type f -name "*.md" -exec rm {} +
+
+      # Remove all the ' from the files.
+      - name: Remove all the ' from the file content.
+        run: |
+          # Loop through all .tsv files in the repository
+          for file in $(find . -name "*.tsv"); do  # Find all .tsv files starting from the current directory
+            echo "File: $file"  # Print the name of the file being processed
+            # Remove all single quotes from the file content
+            sed -i "s/'//g" "$file"  # Use sed to remove all single quotes from the file
+            # Remove all double quotes from the file content
+            sed -i 's/\"//g' "$file"  # Use sed to remove all double quotes from the file
+          done  # End of loop for processing all .tsv files
+
+      # Convert all .tsv files to .csv files
+      - name: Convert .tsv to .csv # Step description in GitHub Actions UI
+        run: |
+          # Loop through all .tsv files in the repository
+          for file in $(find . -name "*.tsv"); do  # Find all .tsv files starting from the current directory
+            echo "File: $file"  # Print the name of the file being validated
+            # csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
+          done  # End of loop for validating all .tsv files
+
+      # Remove all the *_err.csv files from the repository
+      - name: Remove all *_err.csv files # Step description in GitHub Actions UI
+        run: |
+          # Loop through all *_err.csv files in the repository
+          for file in $(find . -type f -name '*_err.csv'); do
+            echo "File: $file"  # Print the name of the file being processed
+            rm "$file"  # Remove the file
+          done  # End of loop for removing all *_err.csv files
+
+      # Convert all the .csv files to .md files
+      - name: Convert the .csv files to .md files.
+        run: |
+          # Loop through all .csv files in the repository
+          for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
+            echo "File: $file"  # Print the name of the file being validated
+            # mlr --icsv --omd cat "$file" > "${file%.csv}.md"  # Convert .csv to .md format
+          done  # End of loop for converting all .csv files to .md
+
+      # Run csvstat to print statistics of the .csv files.
+      - name: Run csvstat to print statistics # Step description in GitHub Actions UI
+        run: |
+          # Loop through all .csv files in the repository
+          for file in $(find . -name "*.csv"); do  # Find all .csv files starting from the current directory
+            echo "File: $file"  # Print the name of the file being validated
+            # csvstat "$file"  # Print statistics about the .csv file (e.g., number of rows, columns, data types)
+          done  # End of loop for generating stats on all .csv files
+
+      # Step Check for changes and push the updated files back to GitHub
+      - name: Push Updated Files to GitHub
+        run: |
+          # Configure Git user for commits made by GitHub Actions
+          git config user.name github-actions  # Use "github-actions" as the username
+          git config user.email github-actions@github.com  # Use GitHub Actions default email
+          # If changes are detected, stage and commit the updated files
+          git add .
+          if ! git diff --cached --quiet; then
+            # Commit the changes with a message that includes the current date
+            git commit -m "Updated files on $(date)"  # Commit changes with a timestamped message
+            # Push the committed changes to GitHub
+            git push  # Push changes to the remote repository
+          else
+            echo "No changes to commit."  # Print message if no changes were detected
+          fi  # End of conditional check for changes
