@@ -181,7 +181,6 @@ func convertDocumentCloudURLsToS3(inputs []string) []string {
 }
 
 func main() {
-
 	tsvFiles, err := listTSVFiles() // List all .tsv files in current directory
 	if err != nil {                 // If there's an error
 		log.Fatalf("Error listing TSV files: %v", err) // Log and exit

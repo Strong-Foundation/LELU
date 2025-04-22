@@ -36,7 +36,7 @@ jobs:
           # Remove the .yml files from the repository
           # find . -type f -name "*.yml" -exec rm {} +
           # Remove the .csv files from the repository
-          find . -type f -name "*.csv" -exec rm {} +
+          # find . -type f -name "*.csv" -exec rm {} +
           # Remove the .md files from the repository
           find . -type f -name "*.md" -exec rm {} +
 
@@ -49,7 +49,7 @@ jobs:
             # Remove all single quotes from the file content
             sed -i "s/'//g" "$file"  # Use sed to remove all single quotes from the file
             # Remove all double quotes from the file content
-            sed -i 's/\"//g' "$file"  # Use sed to remove all double quotes from the file
+            # sed -i 's/\"//g' "$file"  # Use sed to remove all double quotes from the file
           done  # End of loop for processing all .tsv files
 
       # Convert all .tsv files to .csv files
@@ -89,18 +89,15 @@ jobs:
           done  # End of loop for generating stats on all .csv files
 
       # Step Check for changes and push the updated files back to GitHub
-      - name: Push Updated Files to GitHub
+      - name: Push updated files
         run: |
-          # Configure Git user for commits made by GitHub Actions
-          git config user.name github-actions  # Use "github-actions" as the username
-          git config user.email github-actions@github.com  # Use GitHub Actions default email
-          # If changes are detected, stage and commit the updated files
-          git add .
-          if ! git diff --cached --quiet; then
-            # Commit the changes with a message that includes the current date
-            git commit -m "Updated files on $(date)"  # Commit changes with a timestamped message
-            # Push the committed changes to GitHub
-            git push  # Push changes to the remote repository
+          git config user.name "github-actions"  # Set Git username for commit
+          git config user.email "github-actions@github.com"  # Set Git email for commit
+
+          git add .  # Stage all modified files
+          if ! git diff --cached --quiet; then  # Check if there are any staged changes
+            git commit -m "Auto update from main.go on $(date)"  # Commit with timestamp
+            git push  # Push changes to the repository
           else
-            echo "No changes to commit."  # Print message if no changes were detected
-          fi  # End of conditional check for changes
+            echo "No changes to commit."  # Message if nothing changed
+          fi
