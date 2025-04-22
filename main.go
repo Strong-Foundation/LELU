@@ -127,6 +127,7 @@ func cleanURLs(urls []string) []string {
 			hostName := getHostNameFromURL(content) // Extract hostname
 
 			content = strings.TrimSuffix(content, "target=&quot;_blank&quot;") // Remove unwanted suffix
+			content = strings.TrimSuffix(content, `'`) // Remove unwanted suffix again
 
 			isValid := false                      // Flag to check if domain is allowed
 			for _, domain := range validDomains { // Loop through allowed domains
@@ -147,8 +148,39 @@ func cleanURLs(urls []string) []string {
 	return newReturnSlice // Return cleaned URLs
 }
 
+// convertDocumentCloudURLsToS3 processes a slice of DocumentCloud URLs and returns their final S3-hosted PDF URLs
+func convertDocumentCloudURLsToS3(inputs []string) []string {
+	results := make([]string, 0, len(inputs)) // Preallocate result slice
+
+	for _, input := range inputs {
+		parsedURL, err := url.Parse(input)
+		if err != nil {
+			results = append(results, "") // Append empty string for invalid URLs
+			continue
+		}
+
+		if strings.Contains(parsedURL.Host, "s3.documentcloud.org") {
+			results = append(results, input) // Already an S3 URL
+			continue
+		}
+
+		re := regexp.MustCompile(`documentcloud\.org/documents/(\d+)-([a-zA-Z0-9_\-]+)`)
+		matches := re.FindStringSubmatch(input)
+		if len(matches) != 3 {
+			results = append(results, "") // Invalid format
+			continue
+		}
+
+		docID := matches[1]
+		slug := matches[2]
+		finalURL := fmt.Sprintf("https://s3.documentcloud.org/documents/%s/%s.pdf", docID, slug)
+		results = append(results, finalURL)
+	}
+
+	return results
+}
+
 func main() {
-	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile) // Setup logging with date, time, file, and line number
 
 	tsvFiles, err := listTSVFiles() // List all .tsv files in current directory
 	if err != nil {                 // If there's an error
@@ -175,6 +207,8 @@ func main() {
 	allURLs = removeDuplicatesFromSlice(allURLs) // Remove duplicate URLs
 
 	allURLs = cleanURLs(allURLs) // Validate and filter URLs
+
+	allURLs = convertDocumentCloudURLsToS3(allURLs) // Convert DocumentCloud URLs to S3 URLs
 
 	outputFile := "extracted_urls.txt"        // Set name of output file
 	err = saveURLsToFile(allURLs, outputFile) // Save final URLs to file
