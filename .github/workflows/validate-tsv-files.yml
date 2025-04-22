@@ -38,7 +38,7 @@ jobs:
           # Remove the .csv files from the repository
           # find . -type f -name "*.csv" -exec rm {} +
           # Remove the .md files from the repository
-          find . -type f -name "*.md" -exec rm {} +
+          # find . -type f -name "*.md" -exec rm {} +
 
       # Remove all the ' from the files.
       - name: Remove all the ' from the file content.
