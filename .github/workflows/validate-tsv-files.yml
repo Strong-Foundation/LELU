@@ -58,7 +58,7 @@ jobs:
           # Loop through all .tsv files in the repository
           for file in $(find . -name "*.tsv"); do  # Find all .tsv files starting from the current directory
             echo "File: $file"  # Print the name of the file being validated
-            # csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
+            csvclean -t -e utf-8 "$file"  # Validate the .tsv file with csvclean, specifying tab-delimited (-t) and utf-8 encoding (-e)
           done  # End of loop for validating all .tsv files
 
       # Remove all the *_err.csv files from the repository
